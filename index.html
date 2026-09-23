@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jihoon's Connectome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="intro" class="intro" aria-hidden="true">
+    <div class="quote">
+      <span class="quote-main">“I am my connectome”</span>
+      <span class="quote-source">— Sebastian Seung, <i>Connectome: How the Brain's Wiring Makes Us Who We Are</i> —</span>
+    </div>
+  </section>
+
+  <div id="site" class="site hidden">
+    <header class="topbar">
+      <div class="brand">JIHOON'S CONNECTOME</div>
+      <nav class="years" aria-label="Timeline">
+        <button data-year="2024">2024</button>
+        <button data-year="2025">2025</button>
+        <button data-year="2026" class="active">2026</button>
+      </nav>
+      <div class="top-actions">
+        <span class="divider"></span>
+        <button id="resumeBtn">RESUME</button>
+        <span class="divider"></span>
+        <button id="aboutBtn">ABOUT</button>
+      </div>
+    </header>
+
+    <main class="main" id="main">
+      <section class="brain-stage" id="brainStage">
+        <div class="brain-wrap">
+          <img id="brainImage" src="brain_art.png" class="brain-image" alt="Sagittal brain line-art" draggable="false">
+          <svg class="brain-overlay" viewBox="0 0 1586 992" aria-hidden="true">
+            <defs>
+              <filter id="blueGlow" x="-300%" y="-300%" width="600%" height="600%">
+                <feGaussianBlur stdDeviation="7" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g id="connections"></g>
+            <g id="labels"></g>
+            <g id="regionPoints"></g>
+          </svg>
+        </div>
+
+        <div id="tutorialGuide" class="tutorial-guide hidden" aria-live="polite" aria-hidden="true">
+          <div class="tutorial-topline">
+            <span id="tutorialKicker">GUIDED TOUR</span>
+            <button id="skipTourBtn" type="button">SKIP</button>
+          </div>
+          <div class="tutorial-progress" aria-hidden="true">
+            <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+          </div>
+          <div class="tutorial-count" id="tutorialCount">01 / 03</div>
+          <h2 id="tutorialTitle">Start with a region</h2>
+          <p id="tutorialText">Click any highlighted brain region to discover the experiences connected to it.</p>
+          <div class="tutorial-status" id="tutorialStatus">Waiting for your first click</div>
+        </div>
+
+        <div id="tutorialSpotlight" class="tutorial-spotlight hidden" aria-hidden="true"></div>
+        <div id="tutorialTooltip" class="tutorial-tooltip hidden" aria-hidden="true">
+          <span class="tooltip-kicker">NEXT</span>
+          <strong id="tooltipTitle">Explore</strong>
+          <span id="tooltipText">Click a highlighted point.</span>
+        </div>
+      </section>
+
+      <aside class="panel panel-hidden" id="selectedPanel">
+        <div class="panel-eyebrow">SELECTED REGION</div>
+        <h1 id="panelTitle">Hippocampus</h1>
+        <p id="panelSubtitle">Learning &amp; Research</p>
+        <span class="year-pill" id="panelYear">2026</span>
+
+        <div class="panel-section-title">EXPERIENCES</div>
+        <div id="experienceList" class="experience-list"></div>
+
+        <div class="panel-section-title awards-heading">HONORS &amp; AWARDS</div>
+        <div id="awardsList" class="awards-list"></div>
+
+        <button class="view-all" id="viewAllBtn">CLEAR SELECTION</button>
+      </aside>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="aboutModal">
+    <div class="modal-card about-card">
+      <button class="modal-close" id="closeAbout" aria-label="Close">×</button>
+      <div class="panel-eyebrow">ABOUT</div>
+      <h2>Connectome</h2>
+      <p>A connectome is the map of the brain. Through this website, I hoped to show how my experiences are interconnected and ultimately contribute to the formation of a mature connectome.</p>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="experienceModal">
+    <div class="modal-card experience-modal-card">
+      <button class="modal-close" id="closeExperience" aria-label="Close">×</button>
+      <div class="panel-eyebrow">EXPERIENCE</div>
+      <h2 id="experienceModalTitle">Experience</h2>
+      <div id="experienceModalRole" class="experience-modal-role">Role</div>
+      <div class="experience-modal-line"></div>
+      <p id="experienceModalDescription">Experience details.</p>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="awardModal">
+    <div class="modal-card award-modal-card">
+      <button class="modal-close" id="closeAward" aria-label="Close">×</button>
+      <div class="panel-eyebrow">HONOR &amp; AWARD</div>
+      <h2 id="awardModalTitle">Award</h2>
+      <div id="awardModalResult" class="award-modal-result">Result</div>
+      <div class="award-modal-line"></div>
+      <p id="awardModalDescription">Award details.</p>
+    </div>
+  </div>
+
+  <div id="tourComplete" class="tour-complete hidden" aria-live="polite">
+    <span>CONNECTOME EXPLORED</span>
+    <strong>You're ready. Explore freely.</strong>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
