@@ -169,6 +169,22 @@ const experiences = [
     years: [2026], 
     regions: ["motor"], 
     description: "Picked up the guitar to play Radiohead songs, hopefully to play for others." 
+  },
+
+  { 
+    title: "Neuroscience Enthusiast", 
+    role: "Learning", 
+    years: [2025, 2026], 
+    regions: ["prefrontal", "hippocampus"], 
+    description: "Emailed researchers for questions, video calls, and guidence. Attended K-Brain 2025 & 2026, networking with researchers around the world." 
+  },
+
+  { 
+    title: "School Medical Club", 
+    role: "Member", 
+    years: [2026], 
+    regions: ["hippocampus"], 
+    description: "Wrote articles connecting neuroscience-related medical facts to student body." 
   }
 
 ];
